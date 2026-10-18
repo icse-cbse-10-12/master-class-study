@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#091326">
+<title>MASTER CLASS | Smart Learning</title>
+<style>
+:root{--bg:#091326;--panel:#111f37;--gold:#e9c66b;--text:#f5f7fc;--muted:#aab6cc}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6}
+header{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #27344a;gap:16px;flex-wrap:wrap}
+.brand{font-size:22px;font-weight:800;letter-spacing:1px;color:var(--gold)}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+a{color:inherit;text-decoration:none}
+nav a:hover,.gold{color:var(--gold)}
+button,.btn{background:var(--gold);color:#101827;border:0;border-radius:8px;padding:11px 16px;font-weight:bold;cursor:pointer;display:inline-block}
+button:hover,.btn:hover{opacity:.88}
+.hero{padding:65px 6% 48px;text-align:center;background:radial-gradient(ellipse at top,#1a3151,transparent 70%)}
+.hero h1{font-size:clamp(32px,6vw,58px);line-height:1.15;margin:12px 0}
+.hero p{max-width:650px;margin:18px auto 25px;color:var(--muted)}
+section{padding:36px 6%}
+h2{font-size:27px;margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid #273751;border-radius:14px;padding:20px}
+.card h3{margin:8px 0;color:var(--gold)}
+.card p{color:var(--muted);font-size:14px}
+.icon{font-size:30px}
+input,select{width:100%;padding:12px;margin:6px 0 14px;background:#0b172a;border:1px solid #35445c;border-radius:8px;color:white}
+label{display:block;color:var(--muted);font-size:14px}
+.notice{color:var(--muted);font-size:13px}
+footer{text-align:center;padding:28px;border-top:1px solid #27344a;color:var(--muted)}
+#results{margin-top:16px}
+@media(max-width:600px){header{padding:16px 5%}nav{gap:12px}.hero{padding-top:45px}section{padding:28px 5%}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#">MASTER CLASS</a>
+  <nav>
+    <a href="#courses">Courses</a>
+    <a href="#materials">Materials</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#ai">AI Tutor</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <p class="gold">LEARN • PRACTISE • ACHIEVE</p>
+  <h1>Your journey to <span class="gold">excellence</span><br>starts here.</h1>
+  <p>One learning destination for ICSE, CBSE, JEE and NEET. Explore study resources, practise questions and build confidence chapter by chapter.</p>
+  <a class="btn" href="#courses">Explore Courses</a>
+  <a class="btn" href="#materials" style="margin-left:8px;background:#263955;color:white">Study Materials</a>
+</section>
+
+<section id="courses">
+  <h2>Explore Your <span class="gold">Learning Path</span></h2>
+  <div class="grid">
+    <a class="card" href="#materials"><div class="icon">📘</div><h3>ICSE Class 10</h3><p>Notes, revision resources and board exam practice.</p></a>
+    <a class="card" href="#materials"><div class="icon">📗</div><h3>CBSE Class 10</h3><p>Subject-wise learning and exam preparation.</p></a>
+    <a class="card" href="#materials"><div class="icon">🎓</div><h3>Classes 11–12</h3><p>Build strong concepts across your subjects.</p></a>
+    <a class="card" href="#materials"><div class="icon">⚛️</div><h3>JEE Preparation</h3><p>Physics, Chemistry, Mathematics and practice.</p></a>
+    <a class="card" href="#materials"><div class="icon">🧬</div><h3>NEET Preparation</h3><p>Biology, Chemistry, Physics and MCQs.</p></a>
+  </div>
+</section>
+
+<section id="materials">
+  <h2>Study <span class="gold">Materials Library</span></h2>
+  <p class="notice">Sample resources are shown below. Replace them with your own verified notes and PDF links.</p>
+  <input id="search" placeholder="Search materials, subjects or chapters..." aria-label="Search materials">
+  <div class="grid" id="resourceList">
+    <article class="card resource"><h3>Biology Revision</h3><p>NEET · Class 11 · Biology</p><p>Sample resource — add your PDF link here.</p></article>
+    <article class="card resource"><h3>Chemical Bonding</h3><p>NEET / JEE · Chemistry</p><p>Sample resource — add your PDF link here.</p></article>
+    <article class="card resource"><h3>Board Exam Practice</h3><p>ICSE / CBSE · Class 10</p><p>Sample resource — add your PDF link here.</p></article>
+  </div>
+  <p id="empty" class="notice" hidden>No matching materials found.</p>
+</section>
+
+<section id="quiz">
+  <h2>Quick <span class="gold">Practice Quiz</span></h2>
+  <div class="card">
+    <p><strong>Biology:</strong> Which organelle is primarily responsible for producing ATP during aerobic respiration?</p>
+    <label><input type="radio" name="q1" value="a" style="width:auto"> Ribosome</label>
+    <label><input type="radio" name="q1" value="b" style="width:auto"> Mitochondrion</label>
+    <label><input type="radio" name="q1" value="c" style="width:auto"> Golgi apparatus</label>
+    <button onclick="checkQuiz()">Check Answer</button>
+    <p id="quizResult" role="status"></p>
+  </div>
+</section>
+
+<section id="ai">
+  <h2>Your AI <span class="gold">Study Tutor</span></h2>
+  <div class="card">
+    <p>This section is ready for a future AI tutor connection.</p>
+    <p class="notice">AI answers require a real AI service and a secure backend. Do not enter passwords or personal information here.</p>
+    <button onclick="alert('The AI tutor is not connected yet. It will be enabled after secure backend setup.')">Explore AI Tutor</button>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p class="brand">MASTER CLASS</p>
+  <p>Learn with purpose. Prepare with confidence.</p>
+  <p>Educational resources for ICSE · CBSE · JEE · NEET</p>
+</footer>
+
+<script>
+const search = document.getElementById('search');
+search.addEventListener('input', () => {
+  const term = search.value.toLowerCase();
+  let count = 0;
+  document.querySelectorAll('.resource').forEach(card => {
+    const show = card.textContent.toLowerCase().includes(term);
+    card.hidden = !show;
+    if(show) count++;
+  });
+  document.getElementById('empty').hidden = count !== 0;
+});
+function checkQuiz() {
+  const answer = document.querySelector('input[name="q1"]:checked');
+  const result = document.getElementById('quizResult');
+  if(!answer) {
+    result.textContent = 'Please select an answer first.';
+  } else if(answer.value === 'b') {
+    result.textContent = 'Correct! Mitochondria are a major site of aerobic ATP production.';
+  } else {
+    result.textContent = 'Not quite. Review the functions of cell organelles and try again.';
+  }
+}
+</script>
+</body>
+</html>
